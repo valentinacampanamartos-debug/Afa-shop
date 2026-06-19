@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth scroll-pt-24">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,7 @@
             
             <a href="#inicio" class="font-bold text-lg">Kettu Café</a>
 
-            <button id="menu-btn" class="block md:hidden focus:outline-none text-2xl">
+            <button id="menu-btn" class="block md:hidden focus:outline-none text-2xl px-2 hover:text-amber-300">
                 ☰
             </button>
 
@@ -42,25 +41,7 @@
         </div>
     </nav>
 
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const menuLinks = document.getElementById('menu-links');
-
-        menuBtn.addEventListener('click', () => {
-            menuLinks.classList.toggle('hidden');
-        });
-
-        // Opcional: Cierra el menú automáticamente cuando tocas un enlace
-        document.querySelectorAll('#menu-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if(!menuLinks.classList.contains('hidden') && window.innerWidth < 768) {
-                    menuLinks.classList.add('hidden');
-                }
-            });
-        });
-    </script>
-
-    <section id="inicio" class="h-screen flex flex-col justify-center items-center text-center px-6">
+    <section id="inicio" class="h-screen flex flex-col justify-center items-center text-center px-6 pt-16">
 
         <h2 class="text-4xl md:text-6xl font-bold text-amber-900 mb-4">            
             Bienvenidos a Kettu Café
@@ -76,23 +57,22 @@
 
     </section>
 
-    <!-- QUIENES SOMOS -->
-    <section id="nosotros" class="min-h-screen flex items-center">
+    <section id="nosotros" class="min-h-screen flex items-center py-16">
 
         <div class="container mx-auto px-8">
 
-            <h2 class="text-4xl md:text-6xl font-bold text-amber-900 mb-4">
+            <h2 class="text-4xl md:text-6xl font-bold text-center text-amber-900 mb-8">
                 Quiénes Somos
             </h2>
 
-            <div class="bg-white p-8 rounded-xl shadow-lg">
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
 
                 <p class="mb-4">
                     Kettu Café es una cafetería temática creada por estudiantes
                     apasionados por el café y el diseño.
                 </p>
 
-                <p class="mb-4"> <!-- esto sirve para que haya un enter entre los parrafos -->
+                <p class="mb-4">
                     Nuestro objetivo es ofrecer un lugar cómodo donde las personas
                     puedan estudiar, trabajar, leer o compartir momentos con amigos.
                 </p>
@@ -108,14 +88,13 @@
 
     </section>
 
-    <!-- MENÚ -->
-    <section id="menu" class="min-h-screen py-20">
+    <section id="menu" class="min-h-screen py-16">
 
-        <h2 class="text-4xl md:text-6xl font-bold text-amber-900 mb-4">
+        <h2 class="text-4xl md:text-6xl font-bold text-center text-amber-900 mb-10">
             Nuestro Menú
         </h2>
 
-        <div class="container mx-auto grid md:grid-cols-3 gap-8 px-8">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-8">
             
             <div class="bg-white p-6 rounded-xl shadow-lg">
                 <h3 class="text-2xl font-bold mb-2"> Flat White</h3>
@@ -129,7 +108,6 @@
                 <p class="mt-3 font-bold">$2500</p>
             </div>
 
-
             <div class="bg-white p-6 rounded-xl shadow-lg">
                 <h3 class="text-2xl font-bold mb-2"> Roll de canela</h3>
                 <p>Con frosting y chocolate.</p>
@@ -138,8 +116,7 @@
 
             <div class="bg-white p-6 rounded-xl shadow-lg">
                 <h3 class="text-2xl font-bold mb-2"> Cookies</h3>
-                <p>Galletas con chips de chocolate, pistacho, nutella
-                    (preguntar variedad del dia).</p>
+                <p>Galletas con chips de chocolate, pistacho, nutella (preguntar variedad del dia).</p>
                 <p class="mt-3 font-bold">$1800</p>
             </div>
 
@@ -157,8 +134,7 @@
 
         </div>
 
-        <!-- PROMOS -->
-        <div class="container mx-auto mt-16 px-8">
+        <div class="container mx-auto mt-16 px-8 max-w-3xl">
 
             <div class="bg-amber-200 p-8 rounded-xl text-center">
 
@@ -176,10 +152,9 @@
 
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="min-h-screen py-20">
+    <section id="contacto" class="min-h-screen py-16">
 
-       <h2 class="text-4xl md:text-6xl font-bold text-amber-900 mb-4">
+       <h2 class="text-4xl md:text-6xl font-bold text-center text-amber-900 mb-10">
             Contacto
         </h2>
 
@@ -189,66 +164,34 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                    <input
-                        type="text"
-                        placeholder="Apellido y Nombre"
-                        class="border p-3 rounded-lg">
-
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        class="border p-3 rounded-lg">
-
-                    <input
-                        type="tel"
-                        placeholder="WhatsApp"
-                        class="border p-3 rounded-lg">
-
-                    <input
-                        type="date"
-                        class="border p-3 rounded-lg">
+                    <input type="text" placeholder="Apellido y Nombre" class="border p-3 rounded-lg w-full">
+                    <input type="email" placeholder="Email" class="border p-3 rounded-lg w-full">
+                    <input type="tel" placeholder="WhatsApp" class="border p-3 rounded-lg w-full">
+                    <input type="date" class="border p-3 rounded-lg w-full">
 
                 </div>
 
                 <div class="mt-4">
-
-                    <label class="block mb-2 font-semibold">
-                        Género
-                    </label>
-
+                    <label class="block mb-2 font-semibold">Género</label>
                     <select class="border p-3 rounded-lg w-full">
                         <option>Femenino</option>
                         <option>Masculino</option>
                         <option>Otro</option>
                     </select>
-
                 </div>
 
                 <div class="mt-4">
-
-                    <label class="block mb-2 font-semibold">
-                        Adjuntar CV (PDF)
-                    </label>
-
-                    <input
-                        type="file"
-                        accept=".pdf"
-                        class="border p-3 rounded-lg w-full">
-
+                    <label class="block mb-2 font-semibold">Adjuntar CV (PDF)</label>
+                    <input type="file" accept=".pdf" class="border p-3 rounded-lg w-full">
                 </div>
 
-                <textarea
-                    rows="5"
-                    placeholder="Comentarios..."
-                    class="border p-3 rounded-lg w-full mt-4"></textarea>
+                <textarea rows="5" placeholder="Comentarios..." class="border p-3 rounded-lg w-full mt-4"></textarea>
 
                 <div class="text-center mt-6">
-
-                   <a href="mailto:valentina.campana.martos@gmail.com" 
+                    <a href="mailto:valentina.campana.martos@gmail.com" 
                        class="inline-block bg-amber-700 text-white px-6 py-3 rounded-xl hover:bg-amber-800">
-                    Enviar Consulta
-                </a>
-
+                        Enviar Consulta
+                    </a>
                 </div>
 
             </form>
@@ -256,6 +199,24 @@
         </div>
 
     </section>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menuLinks = document.getElementById('menu-links');
+
+        menuBtn.addEventListener('click', () => {
+            menuLinks.classList.toggle('hidden');
+        });
+
+        // Cierra el menú automáticamente cuando tocas un enlace en el celular
+        document.querySelectorAll('#menu-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(!menuLinks.classList.contains('hidden') && window.innerWidth < 768) {
+                    menuLinks.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
