@@ -1,259 +1,249 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth scroll-pt-24">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kettu Café</title>
-
+    <title>Tienda Oficial-Seleccion Argentina</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para íconos (opcional pero recomendado) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<body class="bg-slate-100 m-0 p-0 font-sans">
 
-<body class="bg-amber-50 text-gray-800">
+    <!-- HEADER MEJORADO - Ahora es completamente responsive con menú hamburguesa -->
+    <header class="bg-sky-400 text-white flex justify-between items-center px-4 sm:px-8 py-4 shadow-lg w-full fixed top-0 z-50">
+        
+        <div>
+            <h1 class="text-2xl sm:text-3xl font-bold text-white tracking-wider">AFA SHOP</h1>
+        </div>
 
-    <nav class="bg-amber-900 text-white fixed top-0 w-full shadow-lg z-50">
-        <div class="container mx-auto flex flex-wrap justify-between items-center py-4 px-6">
+        <!-- Navegación oculta en móvil, visible en pantallas medianas -->
+        <nav class="hidden md:flex gap-6 lg:gap-8 text-base lg:text-lg font-medium">
+            <a href="#nosotros" class="hover:text-blue-900 transition-colors duration-300">Nosotros</a>
+            <a href="#catalogo" class="hover:text-blue-900 transition-colors duration-300">Catalogo</a>
+            <a href="#contacto" class="hover:text-blue-900 transition-colors duration-300">Sumate ahora</a>
+        </nav>
+
+        <!-- Redes sociales - visible en todas las pantallas -->
+        <div class="flex gap-3 sm:gap-4 font-bold text-white">
+            <a href="https://www.instagram.com/afashopoficial/" class="hover:text-blue-900 transition-colors duration-300 text-sm sm:text-base" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/afashopoficial/" class="hover:text-blue-900 transition-colors duration-300 text-sm sm:text-base" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://x.com/afashopoficial/" target="_blank" class="hover:text-blue-900 transition-colors duration-300 text-sm sm:text-base" aria-label="Twitter/X">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+
+        <!-- Botón menú hamburguesa (solo móvil) -->
+        <button id="menu-toggle" class="md:hidden text-white text-2xl hover:text-blue-900 transition-colors" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Menú mobile desplegable (oculto por defecto) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 right-0 bg-sky-400 z-40 shadow-lg">
+        <nav class="flex flex-col items-center py-4 gap-4 text-lg font-medium text-white">
+            <a href="#nosotros" class="hover:text-blue-900 transition-colors duration-300 py-2">Nosotros</a>
+            <a href="#catalogo" class="hover:text-blue-900 transition-colors duration-300 py-2">Catalogo</a>
+            <a href="#contacto" class="hover:text-blue-900 transition-colors duration-300 py-2">Sumate ahora</a>
+        </nav>
+    </div>
+
+    <!-- Espacio para header fijo -->
+    <div class="pt-16 sm:pt-20"></div>
+
+    <!-- Imagen principal - Responsive -->
+    <div class="w-full flex justify-center items-center pt-4 sm:pt-8 pb-4 sm:pb-8 bg-slate-100 px-2 sm:px-0">
+        <img src="img1.jpeg" alt="Imagen-Tienda" class="w-full max-w-7xl h-auto rounded-lg shadow-lg">
+    </div>
+
+    <!-- SECCIÓN NOSOTROS - Mejorada para móviles -->
+    <section id="nosotros" class="bg-gradient-to-b from-green-700 to-green-900 pt-12 sm:pt-20 pb-12 sm:pb-16 px-4 relative overflow-hidden scroll-mt-16 sm:scroll-mt-24">
+        <div class="absolute inset-0 opacity-10 hidden sm:block">
+            <div class="border-4 border-white w-4/5 h-4/5 mx-auto mt-12"></div>
+            <div class="border-4 border-white w-2/5 h-2/5 mx-auto mt-32"></div>
+        </div>
+        
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="text-center text-white mb-8 sm:mb-12">
+                <div class="text-4xl sm:text-6xl mb-3 sm:mb-4">🇦🇷</div>
+                <h2 class="text-3xl sm:text-5xl font-bold uppercase tracking-wider">Nosotros</h2>
+                <div class="w-20 sm:w-32 h-1 bg-yellow-400 mx-auto mt-3 sm:mt-4"></div>
+            </div>
             
-            <a href="#inicio" class="font-bold text-lg">Kettu Café</a>
-
-            <button id="menu-btn" class="block md:hidden focus:outline-none text-2xl px-2 hover:text-amber-300">
-                ☰
-            </button>
-
-            <div id="menu-links" class="hidden w-full md:flex md:w-auto md:items-center md:space-x-6 text-center flex-col md:flex-row gap-4 mt-4 md:mt-0">
-                <a href="#inicio" class="hover:text-amber-300 py-2 md:py-0">Inicio</a>
-                <a href="#nosotros" class="hover:text-amber-300 py-2 md:py-0">Quiénes Somos</a>
-                <a href="#menu" class="hover:text-amber-300 py-2 md:py-0">Menú</a>
-                <a href="#contacto" class="hover:text-amber-300 py-2 md:py-0">Contacto</a>
-
-                <div class="relative group py-2 md:py-0">
-                    <span class="cursor-pointer hover:text-amber-300">Redes Sociales ▼</span>
-                    <div class="absolute hidden group-hover:block bg-white text-black rounded-lg shadow-lg w-40 top-full md:right-0 left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0 z-50">
-                        <a href="https://instagram.com/kettucafe/" target="_blank" class="flex items-center px-4 py-2 hover:bg-gray-100">
-                            <img src="instagram.png" alt="Instagram" class="w-5 h-5 mr-2"> Instagram
-                        </a>
-                        <a href="https://maps.app.goo.gl/b2AB9hSJweGzbdss5" target="_blank" class="flex items-center px-4 py-2 hover:bg-gray-100">
-                            <img src="maps.png" alt="Ubicación" class="w-5 h-5 mr-2"> Ubicación
-                        </a>
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white">
+                <p class="text-base sm:text-lg leading-relaxed mb-6 sm:mb-10 text-center">
+                    Somos un grupo de estudiantes fanáticos de la selección argentina de fútbol, 
+                    unidos para crear esta tienda oficial y acercar a todos los hinchas la posibilidad 
+                    de tener productos oficiales de nuestra selección y acompañarla en el último mundial
+                    de Messi para intentar conquistar un vez más todos juntos la gloria eterna.
+                </p>
+                
+                <!-- Grid de nombres - responsive -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
+                    <div class="bg-white text-blue-900 font-bold py-2 sm:py-3 px-2 rounded-xl text-center text-xs sm:text-sm">
+                        #10 Matías
+                    </div>
+                    <div class="bg-blue-500 text-white font-bold py-2 sm:py-3 px-2 rounded-xl text-center text-xs sm:text-sm">
+                        #7 Valentina
+                    </div>
+                    <div class="bg-white text-blue-900 font-bold py-2 sm:py-3 px-2 rounded-xl text-center text-xs sm:text-sm">
+                        #4 Giuliana
+                    </div>
+                    <div class="bg-blue-500 text-white font-bold py-2 sm:py-3 px-2 rounded-xl text-center text-xs sm:text-sm">
+                        #8 Lucia
                     </div>
                 </div>
+                
+                <div class="text-center mt-4 sm:mt-6 text-yellow-200 text-xs sm:text-sm">
+                    ⚽ Una selección, un sueño, una pasión ⚽
+                </div>
             </div>
-
         </div>
-    </nav>
-
-    <section id="inicio" class="h-screen flex flex-col justify-center items-center text-center px-6 pt-16">
-
-        <h2 class="text-4xl md:text-6xl font-bold text-amber-900 mb-4">            
-            Bienvenidos a Kettu Café
-        </h2>
-
-        <p class="text-xl max-w-2xl"> 
-            Un espacio donde el aroma del café acompaña encuentros, historias y momentos inolvidables.</p>
-
-        <a href="#menu"
-           class="mt-8 bg-amber-700 text-white px-6 py-3 rounded-xl hover:bg-amber-800">
-            Ver Menú
-        </a>
-
     </section>
 
-    <section id="nosotros" class="min-h-screen flex items-center py-16">
-
-        <div class="container mx-auto px-8">
-
-            <h2 class="text-4xl md:text-6xl font-bold text-center text-amber-900 mb-8">
-                Quiénes Somos
-            </h2>
-
-            <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
-
-                <p class="mb-4">
-                    Kettu Café es una cafetería temática creada por estudiantes
-                    apasionados por el café y el diseño.
-                </p>
-
-                <p class="mb-4">
-                    Nuestro objetivo es ofrecer un lugar cómodo donde las personas
-                    puedan estudiar, trabajar, leer o compartir momentos con amigos.
-                </p>
-
-                <p>
-                    Este proyecto fue desarrollado para la materia Instalación de
-                    Accesorios y Periféricos Externos utilizando HTML y Tailwind CSS.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <section id="menu" class="min-h-screen py-16">
-
-        <h2 class="text-4xl md:text-6xl font-bold text-center text-amber-900 mb-10">
-            Nuestro Menú
-        </h2>
-
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-8">
+    <!-- SECCIÓN CATÁLOGO - Mejorada para móviles -->
+    <section id="catalogo" class="min-h-screen bg-sky-200 py-12 sm:py-20 px-3 sm:px-8 flex flex-col justify-center items-center">
+        <div class="max-w-6xl mx-auto text-center w-full">
             
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-2"> Flat White</h3>
-                <p>2 shot de cafe + leche.</p>
-                <p class="mt-3 font-bold">$3200</p>
-            </div>
+            <h2 class="text-3xl sm:text-5xl font-bold text-blue-900 mb-8 sm:mb-16 tracking-wide">Catálogo</h2>
+                        
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                
+                <!-- Tarjeta 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-3 sm:p-4 hover:shadow-xl transition-shadow duration-300">
+                    <img src="camiseta.png" alt="Camiseta 50 Aniversario" class="w-full h-48 sm:h-56 object-contain rounded">
+                    <h2 class="font-bold mt-2 text-sm sm:text-base">Camiseta 50 Aniversario</h2>
+                    <p class="text-green-600 font-bold text-sm sm:text-base">$149.999</p>
+                </div>
 
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-2"> Capuccino</h3>
-                <p>shot de cafe + leche.</p>
-                <p class="mt-3 font-bold">$2500</p>
-            </div>
+                <!-- Tarjeta 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-3 sm:p-4 hover:shadow-xl transition-shadow duration-300">
+                    <img src="short.png" alt="Short" class="w-full h-48 sm:h-56 object-contain rounded">
+                    <h2 class="font-bold mt-2 text-sm sm:text-base">Short</h2>
+                    <p class="text-green-600 font-bold text-sm sm:text-base">$74.999</p>
+                </div>
 
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-2"> Roll de canela</h3>
-                <p>Con frosting y chocolate.</p>
-                <p class="mt-3 font-bold">$4500</p>
-            </div>
+                <!-- Tarjeta 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-3 sm:p-4 hover:shadow-xl transition-shadow duration-300">
+                    <img src="camiseta-titular.png" alt="Camiseta Titular 2026" class="w-full h-48 sm:h-56 object-contain rounded">
+                    <h2 class="font-bold mt-2 text-sm sm:text-base">Camiseta Titular 2026</h2>
+                    <p class="text-green-600 font-bold text-sm sm:text-base">$149.999</p>
+                </div>
 
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-2"> Cookies</h3>
-                <p>Galletas con chips de chocolate, pistacho, nutella (preguntar variedad del dia).</p>
-                <p class="mt-3 font-bold">$1800</p>
-            </div>
+                <!-- Tarjeta 4 -->
+                <div class="bg-white rounded-lg shadow-lg p-3 sm:p-4 hover:shadow-xl transition-shadow duration-300">
+                    <img src="camiseta-alternativa.png" alt="Camiseta Alternativa" class="w-full h-48 sm:h-56 object-contain rounded">
+                    <h2 class="font-bold mt-2 text-sm sm:text-base">Camiseta Alternativa</h2>
+                    <p class="text-green-600 font-bold text-sm sm:text-base">$119.999</p>
+                </div>
 
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-2"> Croissant azul</h3>
-                <p>Crema de queso azul y pistachos.</p>
-                <p class="mt-3 font-bold">$4200</p>
-            </div>
+                <!-- Tarjeta 5 -->
+                <div class="bg-white rounded-lg shadow-lg p-3 sm:p-4 hover:shadow-xl transition-shadow duration-300">
+                    <img src="camiseta-tiro-alto.png" alt="Camiseta Femenina Tiro Alto" class="w-full h-48 sm:h-56 object-contain rounded">
+                    <h2 class="font-bold mt-2 text-sm sm:text-base">Camiseta Femenina Tiro Alto</h2>
+                    <p class="text-green-600 font-bold text-sm sm:text-base">$119.999</p>
+                </div>
 
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-2"> Medialunas</h3>
-                <p>De manteca o grasa.</p>
-                <p class="mt-3 font-bold">$1500</p>
-            </div>
+                <!-- Tarjeta 6 -->
+                <div class="bg-white rounded-lg shadow-lg p-3 sm:p-4 hover:shadow-xl transition-shadow duration-300">
+                    <img src="campera.png" alt="Campera Seleccion Argentina" class="w-full h-48 sm:h-56 object-contain rounded">
+                    <h2 class="font-bold mt-2 text-sm sm:text-base">Campera Selección Argentina</h2>
+                    <p class="text-green-600 font-bold text-sm sm:text-base">$189.999</p>
+                </div>
 
+            </div>
         </div>
-
-        <div class="container mx-auto mt-16 px-8 max-w-3xl">
-
-            <div class="bg-amber-200 p-8 rounded-xl text-center">
-
-                <h3 class="text-3xl font-bold mb-4">
-                    Promociones
-                </h3>
-
-                <p> Café + Cookie: $3500</p>
-                <p> 15% de descuento para estudiantes</p>
-                <p> 2x1 en cafés todos los viernes</p>
-
-            </div>
-
-        </div>
-
     </section>
 
-    <section id="contacto" class="min-h-screen py-16">
+    <!-- SECCIÓN CONTACTO - Mejorada para móviles -->
+    <section id="contacto" class="min-h-screen bg-white py-12 sm:py-20 px-3 sm:px-8 flex flex-col justify-center items-center">
+        <div class="max-w-4xl mx-auto w-full">
+            
+            <h2 class="text-3xl sm:text-5xl font-bold text-blue-900 mb-8 sm:mb-12 text-center tracking-wide">Sumate Al Proyecto</h2>
+            
+            <div class="bg-slate-100 p-4 sm:p-8 md:p-12 rounded-xl shadow-2xl border-t-8 border-blue-400">
+                <form class="space-y-4 sm:space-y-6">
+                    
+                    <!-- Nombre y Email - Responsive grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm sm:text-base">Apellido y Nombre</label>
+                            <input type="text" class="w-full p-2 sm:p-3 rounded border border-slate-300 focus:outline-none focus:border-blue-900 focus:ring-1 focus:ring-blue-900 text-sm sm:text-base" placeholder="Ej: Messi, Lionel">
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm sm:text-base">Email</label>
+                            <input type="email" class="w-full p-2 sm:p-3 rounded border border-slate-300 focus:outline-none focus:border-blue-900 focus:ring-1 focus:ring-blue-900 text-sm sm:text-base" placeholder="capitan@afatienda.com.ar">
+                        </div>
+                    </div>
 
-       <h2 class="text-4xl md:text-6xl font-bold text-center text-amber-900 mb-10">
-            Contacto
-        </h2>
+                    <!-- WhatsApp, Fecha y Género - Responsive -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm sm:text-base">WhatsApp</label>
+                            <input type="tel" class="w-full p-2 sm:p-3 rounded border border-slate-300 focus:outline-none focus:border-blue-900 focus:ring-1 focus:ring-blue-900 text-sm sm:text-base" placeholder="+54 9 341 123 4567">
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm sm:text-base">Fecha de Nacimiento</label>
+                            <input type="date" class="w-full p-2 sm:p-3 rounded border border-slate-300 focus:outline-none focus:border-blue-900 focus:ring-1 focus:ring-blue-900 text-sm sm:text-base">
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm sm:text-base">Género</label>
+                            <select class="w-full p-2 sm:p-3 rounded border border-slate-300 focus:outline-none focus:border-blue-900 focus:ring-1 focus:ring-blue-900 text-sm sm:text-base">
+                                <option>Seleccionar...</option>
+                                <option>Masculino</option>
+                                <option>Femenino</option>
+                                <option>Indistinto</option>
+                            </select>
+                        </div>
+                    </div>
 
-        <div class="container mx-auto max-w-3xl bg-white p-8 rounded-xl shadow-lg">
+                    <!-- Archivo -->
+                    <div>
+                        <label class="block text-slate-700 font-bold mb-2 text-sm sm:text-base">Adjunta tu CV para sumarte (PDF) - Opcional</label>
+                        <input type="file" accept=".pdf" class="w-full p-1 sm:p-2 bg-white rounded border border-slate-300 focus:outline-none focus:border-blue-900 text-sm sm:text-base file:mr-2 sm:file:mr-4 file:py-1 sm:file:py-2 file:px-3 sm:file:px-4 file:rounded file:border-0 file:text-xs sm:file:text-sm file:font-semibold file:bg-blue-200 file:text-blue-900 hover:file:bg-blue-300 transition-all">
+                    </div>
 
-            <form id="contact-form" action="https://formspree.io/f/xeewbdbl" method="POST" enctype="multipart/form-data">
+                    <!-- Mensaje -->
+                    <div>
+                        <label class="block text-slate-700 font-bold mb-2 text-sm sm:text-base">Comentarios o Mensaje</label>
+                        <textarea rows="4" class="w-full p-2 sm:p-3 rounded border border-slate-300 focus:outline-none focus:border-blue-900 focus:ring-1 focus:ring-blue-900 text-sm sm:text-base" placeholder="Dejanos tu mensaje y por qué te querés sumar..."></textarea>
+                    </div>
 
-                <input type="hidden" name="_subject" value="Nuevo contacto desde Kettu Café">
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                    <input type="text" 
-                           name="Nombre_y_Apellido" 
-                           placeholder="Apellido y Nombre" 
-                           class="border p-3 rounded-lg w-full" 
-                           required>
-                           
-                    <input type="email" 
-                           name="Email" 
-                           placeholder="Email" 
-                           class="border p-3 rounded-lg w-full" 
-                           required>
-                           
-                    <input type="tel" 
-                           name="WhatsApp" 
-                           placeholder="WhatsApp" 
-                           class="border p-3 rounded-lg w-full">
-                           
-                    <input type="date" 
-                           name="Fecha_Nacimiento" 
-                           class="border p-3 rounded-lg w-full">
-
-                </div>
-
-                <div class="mt-4">
-                    <label class="block mb-2 font-semibold">Género</label>
-                    <select name="Genero" class="border p-3 rounded-lg w-full">
-                        <option>Femenino</option>
-                        <option>Masculino</option>
-                        <option>Otro</option>
-                    </select>
-                </div>
-
-                <div class="mt-4">
-                    <label class="block mb-2 font-semibold">Adjuntar CV (PDF)</label>
-                    <input type="file" 
-                           name="CV_Adjunto" 
-                           accept=".pdf" 
-                           class="border p-3 rounded-lg w-full" 
-                           required>
-                </div>
-
-                <textarea name="Comentarios" 
-                          rows="5" 
-                          placeholder="Comentarios..." 
-                          class="border p-3 rounded-lg w-full mt-4"></textarea>
-
-                <div class="text-center mt-6">
-                    <button type="submit" 
-                            class="inline-block bg-amber-700 text-white px-6 py-3 rounded-xl hover:bg-amber-800 font-semibold cursor-pointer">
-                        Enviar Consulta
-                    </button>
-                </div>
-
-            </form>
-
+                    <!-- Botones - Responsive -->
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-6 sm:mt-8">
+                        <a href="mailto:afashop@afaoficial.com?subject=Nueva%20Solicitud%20de%20Socio" 
+                           class="inline-block bg-blue-500 text-white font-bold text-base sm:text-xl py-3 sm:py-4 px-6 sm:px-12 rounded hover:bg-white hover:text-blue-900 transition-colors duration-300 shadow-md text-center">
+                            Enviar Solicitud
+                        </a>
+                        <button type="reset"
+                                class="bg-gray-500 text-white font-bold text-base sm:text-xl py-3 sm:py-4 px-6 sm:px-12 rounded hover:bg-gray-600 transition-colors duration-300 shadow-md">
+                            Limpiar Solicitud
+                        </button>
+                    </div>
+                    
+                </form>
+            </div>
         </div>
-
     </section>
 
+    <!-- Script para menú hamburguesa -->
     <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const menuLinks = document.getElementById('menu-links');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        menuBtn.addEventListener('click', () => {
-            menuLinks.classList.toggle('hidden');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        document.querySelectorAll('#menu-links a').forEach(link => {
+        // Cerrar menú al hacer click en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                if(!menuLinks.classList.contains('hidden') && window.innerWidth < 768) {
-                    menuLinks.classList.add('hidden');
-                }
+                mobileMenu.classList.add('hidden');
             });
-        });
-
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            const btn = this.querySelector('button[type="submit"]');
-            const originalText = btn.textContent;
-            
-            btn.textContent = 'Enviando...';
-            btn.disabled = true;
-            btn.classList.add('opacity-50', 'cursor-not-allowed');
-            
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.disabled = false;
-                btn.classList.remove('opacity-50', 'cursor-not-allowed');
-            }, 3000);
         });
     </script>
 
